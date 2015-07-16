@@ -1,0 +1,6 @@
+{
+    "packageName": "com.sap.fiori.client",
+    "targetFolder": "FioriClient",
+    "appName": "FioriClient",
+    "platforms": ["ios"]
+}

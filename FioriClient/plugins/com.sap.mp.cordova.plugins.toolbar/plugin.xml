@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.sap.mp.cordova.plugins.toolbar" version="3.8.0">
+    <name>Toolbar</name>
+    <description>Cordova Toolbar Plugin</description>
+
+    <js-module src="www/toolbar.js" name="toolbar">
+        <clobbers target="window.sap.Toolbar" />
+    </js-module>
+
+    <!-- Android -->
+	<platform name="android">
+        <info>
+            For Android you need to modify the activity theme in the AndroidManifest.xml to be android:theme="@android:style/Theme.Holo.Light".  The minSdkVersion must also be changed to at least 11.
+        </info>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <preference name="showTitle" value="true" />
+                
+            <feature name="toolbar">
+                <param name="android-package" value="com.sap.mp.cordova.plugins.toolbar.Toolbar"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        
+		<source-file src="android/res/drawable-hdpi/ic_menu_home.png" target-dir="res/drawable-hdpi"/>
+		<source-file src="android/res/drawable-hdpi/ic_menu_refresh.png" target-dir="res/drawable-hdpi"/>
+		<source-file src="android/res/drawable-mdpi/ic_menu_home.png" target-dir="res/drawable-mdpi"/>
+		<source-file src="android/res/drawable-mdpi/ic_menu_refresh.png" target-dir="res/drawable-mdpi"/>
+		<source-file src="android/res/drawable-xhdpi/ic_menu_home.png" target-dir="res/drawable-xhdpi"/>
+		<source-file src="android/res/drawable-xhdpi/ic_menu_refresh.png" target-dir="res/drawable-xhdpi"/>
+		<source-file src="android/res/drawable-xxhdpi/ic_menu_home.png" target-dir="res/drawable-xxhdpi"/>
+		<source-file src="android/res/drawable-xxhdpi/ic_menu_refresh.png" target-dir="res/drawable-xxhdpi"/>
+        
+		<source-file src="android/libs/toolbar-android-3.8.0.jar" target-dir="libs"/>
+	</platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="toolbar">
+                <param name="ios-package" value="SMPToolbarPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <resource-file src="ios/SMPDefaultToolbar.xcassets"/>
+        <source-file framework="true" src="ios/libs/libSMPToolbarPlugin.a"/>
+    </platform>
+    
+    <!-- windows -->
+    <platform name="windows">
+        <js-module src="windows81/src/toolbar_proxy_win.js" name="toolbar_proxy_win">
+            <merges target="" />
+        </js-module>
+    </platform>
+</plugin>

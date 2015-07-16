@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	id="com.sap.mp.cordova.plugins.attachmentviewer"
+	version="3.8.0">
+
+	<name>AttachmentViewer</name>
+	<dependency id="com.sap.mp.cordova.plugins.corelibs" />
+	<dependency id="com.sap.mp.cordova.plugins.authproxy" />
+	<dependency id="org.apache.cordova.device" />
+	<dependency id="org.apache.cordova.inappbrowser"/>
+	
+	<js-module name="AttachmentViewer" src="www/attachmentviewer.js">
+		<clobbers target="sap.AttachmentViewer"/>
+	</js-module>
+        
+    <asset target="plugins/com.sap.mp.cordova.plugins.attachmentviewer/www/messages_en.json" src="www/messages_en.json"/>
+    <asset target="plugins/com.sap.mp.cordova.plugins.attachmentviewer/www/messages_en.properties" src="www/messages_en.properties"/>
+
+	<platform name="android">
+
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AttachmentHandler">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.attachmentViewer.AttachmentViewer"/>
+				<param name="onload" value="true"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<provider
+				android:name="com.sap.mp.cordova.plugins.attachmentViewer.FileProviderWithWorkaround"
+				android:authorities="$PACKAGE_NAME.KapselAttachmentViewer"
+				android:exported="false"
+				android:grantUriPermissions="true">
+				<meta-data
+					android:name="android.support.FILE_PROVIDER_PATHS"
+					android:resource="@xml/filepaths" />
+			</provider>
+		</config-file>
+
+		<source-file src="android/filepaths.xml" target-dir="res/xml/" />
+
+        <source-file src="android/libs/support-v4-19.1.0.jar" target-dir="libs"/>
+        <source-file src="android/libs/attachmentviewer-android-3.8.0.jar" target-dir="libs"/>
+	</platform>
+</plugin>

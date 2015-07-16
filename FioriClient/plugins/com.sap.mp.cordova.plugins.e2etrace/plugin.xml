@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.sap.mp.cordova.plugins.e2etrace" version="3.8.0">
+    <name>E2ETrace</name>
+    <dependency id="com.sap.mp.cordova.plugins.xhook"/>
+    <dependency id="com.sap.mp.cordova.plugins.corelibs"/>
+    <dependency id="org.apache.cordova.inappbrowser"/>    
+    <dependency id="com.sap.mp.cordova.plugins.logon"/>
+
+    <js-module name="E2ETrace" src="www/e2etrace.js">
+        <clobbers target="sap.E2ETrace"/>
+    </js-module>
+	
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/widget">
+			<feature name="E2ETrace">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.e2etrace.E2ETrace"/>
+			</feature>
+		</config-file>
+		<source-file src="android/libs/e2etrace-android-3.8.0.jar" target-dir="libs"/>
+	</platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/widget">
+			<feature name="E2ETrace">
+				<param name="ios-package" value="SMPE2ETracePlugin"/>
+			</feature>
+		</config-file>
+		<source-file framework="true" src="ios/libs/libSMPE2ETracePlugin.a"/>
+	</platform>
+     <platform name="windows">
+	    <!-- command proxy for windows8 platform -->
+	    <js-module name="e2etrace_proxy_win8" src="windows81/src/e2etrace_proxy_win8.js">
+	        <clobbers target=""/>
+	     </js-module>
+
+        <!-- copy native files -->
+        <framework src="windows81/bin/SAP.EndToEndTrace.winmd" custom="true"/>
+        <framework src="windows81/bin/SAP.Supportability.winmd" custom="true"/>
+        <framework src="windows81/bin/SAP.Net.Http.dll" custom="true"/>
+	 </platform>
+</plugin>

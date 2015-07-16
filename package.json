@@ -1,0 +1,17 @@
+{
+  "name": "create_fiori_client",
+  "description": "A script for creating the Fiori Client application.",
+  "version": "3.8.0",
+  "homepage": "",
+  "author": {
+    "name": "SAP",
+    "email": ""
+  },
+  "dependencies" :
+  {
+    "shelljs" : "~0.3.0",
+	"unzip" : "~0.1.11"
+  },
+  "keywords": [],
+  "private": true
+}

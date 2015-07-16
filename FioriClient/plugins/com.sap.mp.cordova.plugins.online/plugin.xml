@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.sap.mp.cordova.plugins.online" version="3.8.0">
+    <name>Online</name>
+    <description>Cordova Online Plugin</description>
+	<dependency id="com.sap.mp.cordova.plugins.corelibs" /> 
+	
+	<js-module name="Online" src="www/online.js">
+		<clobbers target="sap.Online"/>
+	</js-module>
+	
+
+	<asset target="CannotReachHost.html" src="CannotReachHost.html"/>
+	<asset target="CertificateErrorPage.html" src="CertificateErrorPage.html"/>
+	<asset target="errorHandling.js" src="errorHandling.js"/>
+	<asset target="i18n.properties" src="i18n.properties"/>
+
+    <!-- Android -->
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="Online">
+				<param name="android-package" value="com.sap.mp.cordova.plugins.online.Online"/>
+				<param name="onload" value="true"/>
+			</feature>
+            <preference name="ErrorUrl" value="file:///android_asset/www/CannotReachHost.html"/>
+		    <preference name="useBusyIndicator" value="true" />
+		</config-file>
+		
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-feature android:name="android.view.Window.FEATURE_INDETERMINATE_PROGRESS" />
+		</config-file>
+		
+		<source-file src="android/libs/online-android-3.8.0.jar" target-dir="libs"/>
+	</platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Online">
+                <param name="ios-package" value="SMPOnlinePlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+		    <preference name="useBusyIndicator" value="true" />
+        </config-file>
+        <source-file framework="true" src="ios/libs/libSMPOnlinePlugin.a"/>
+    </platform>
+</plugin>

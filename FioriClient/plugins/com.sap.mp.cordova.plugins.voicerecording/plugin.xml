@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.sap.mp.cordova.plugins.voicerecording" version="3.8.0">
+    <name>Voice Recording</name>
+
+    <js-module name="VoiceRecording" src="www/recording.js">
+        <clobbers target="sap.VoiceRecording" />
+    </js-module>
+
+    <dependency id="org.apache.cordova.media-capture" />
+
+    <dependency id="com.sap.mp.cordova.plugins.encryptedstorage" />
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="VoiceRecording">
+                <param name="android-package" value="com.sap.mp.cordova.plugins.recording.VoiceRecording" />
+            </feature>
+        </config-file>
+        <source-file src="android/libs/voicerecording-android-3.8.0.jar" target-dir="libs" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+            <feature name="VoiceRecording">
+                <param name="ios-package" value="SMPVoiceRecordingPlugin" />
+            </feature>
+        </config-file>
+        <source-file framework="true" src="ios/libs/libSMPVoiceRecordingPlugin.a" />
+        <framework src="security.framework" />
+    </platform>
+</plugin>

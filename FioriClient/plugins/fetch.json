@@ -1,0 +1,258 @@
+{
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-whitelist@1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.logon": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/logon"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.corelibs": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/corelibs"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.authproxy": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/authproxy"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "org.apache.cordova.inappbrowser": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/inappbrowser"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.logger": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/logger"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.apppreferences": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/apppreferences"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.settings": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/settings"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.online": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/online"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.toolbar": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/toolbar"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.cachemanager": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/cachemanager"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.i18n": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/i18n"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "org.apache.cordova.dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.dialogs"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.encryptedstorage": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/encryptedstorage"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.e2etrace": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/e2etrace"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.xhook": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/sapxhook"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.barcodescanner": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/barcodescanner"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.fioriclient": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/fioriclient"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.attachmentviewer": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/attachmentviewer"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "nl.x-services.plugins.calendar": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/calendar"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "de.appplant.cordova.plugin.printer": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/print"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.sap.mp.cordova.plugins.voicerecording": {
+        "source": {
+            "type": "local",
+            "path": "/Users/huntdo/SAP/MobileSDK3/KapselSDK/plugins/voicerecording"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.media-capture": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.media-capture@0.3.6"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.file@1.3.3"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.camera": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.camera@0.3.5"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.contacts": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.contacts@0.2.16"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.geolocation": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.geolocation@0.3.12"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar@0.1.10"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.splashscreen@0.3.0"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.network-information": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.network-information@0.2.14"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.media": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.media@0.2.16"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

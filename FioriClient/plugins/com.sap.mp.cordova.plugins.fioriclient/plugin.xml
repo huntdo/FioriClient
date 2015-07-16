@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.sap.mp.cordova.plugins.fioriclient"
+    version="3.8.0">
+
+    <name>FioriClient</name>
+
+    <js-module name="FioriClient" src="www/fioriclient.js">
+        <clobbers target="sap.FioriClient"/>
+    </js-module>
+
+	<asset target="plugins/com.sap.mp.cordova.plugins.fioriclient/www/messages_en.json" src="www/messages_en.json"/>
+	<asset target="plugins/com.sap.mp.cordova.plugins.fioriclient/www/messages_en.properties" src="www/messages_en.properties"/>
+	<asset target="plugins/com.sap.mp.cordova.plugins.fioriclient/www/validation.html" src="www/validation.html"/>
+    
+    <platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<preference name="homeUrlkey" value="fioriURL" />
+            <preference name="helpUrl" value="http://help.sap.com/fiori-client/" />
+		</config-file>
+	</platform>
+	
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+			<preference name="homeUrlkey" value="fioriURL" />
+            <preference name="helpUrl" value="http://help.sap.com/fiori-client/" />
+		</config-file>
+    
+        <resource-file src="ios/SMPFioriToolbar.xcassets"/>
+    </platform>
+    
+</plugin>

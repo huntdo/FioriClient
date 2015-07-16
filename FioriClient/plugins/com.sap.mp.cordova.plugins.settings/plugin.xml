@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.sap.mp.cordova.plugins.settings" version="3.8.0">
+	<name>Settings</name>
+    <dependency id="com.sap.mp.cordova.plugins.corelibs" />
+    <dependency id="org.apache.cordova.inappbrowser" />
+    <dependency id="com.sap.mp.cordova.plugins.logon" />
+    <dependency id="com.sap.mp.cordova.plugins.logger" />
+    
+    <js-module name="Settings" src="www/settings.js">
+		<clobbers target="sap.Settings"/>
+	</js-module>
+
+    <js-module name="AppSettings" src="www/appsettings.js">
+		<merges target="sap.Settings"/>
+	</js-module>
+     <platform name="android">
+	<config-file target="res/xml/config.xml" parent="/widget">
+            <feature name="SMPSettingsExchangePlugin" onload="true" >
+                <param name="android-package" value="com.sap.mp.settingsexchange.SettingsExchange" />
+            </feature>
+	</config-file>
+        <source-file src="android/libs/settingsexchange-android-3.8.0.jar" target-dir="libs"/>
+     </platform>
+	
+     <platform name="ios">
+       <config-file target="config.xml" parent="/widget">
+          <feature name="SMPSettingsExchangePlugin" onload="true"  >
+                <param name="ios-package" value="SMPSettingsExchangePlugin" />
+            </feature>
+       </config-file>
+       <source-file framework="true" src="ios/libs/libSMPSettingsExchangePlugin.a"/>
+     </platform>
+	
+</plugin>
