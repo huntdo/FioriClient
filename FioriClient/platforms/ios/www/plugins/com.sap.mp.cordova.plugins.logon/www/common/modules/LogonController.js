@@ -95,6 +95,7 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
         var email = context.operation.data;
 				
         var successCallback = function(result){
+            
             if (result.status == 200 && result.responseText) {
                 utils.log("got configuration from MobilePlace: " + result.responseText);
                 try{
@@ -142,8 +143,11 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
     var getConfigFromMDM = function(onGetConfigData, context) {
        
         var successCallback = function(result){
+               
             if (result != null && result.length > 0) {
+               
                 utils.log("got configuration from MDM: " + result);
+               
                 try{
                     var config = JSON.parse(result);
                     context.operation.data = config;
@@ -168,7 +172,8 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
         }
         sap.logon.Core.getMDMConfiguration(successCallback,errorCallback);
     };																						 
-																							 
+   //-- state: begin --> run -> done (switch to another state) --> if don't exist any configure source type then start logon init
+               
     var getAppConfig = function(context){
         console.log("LogonController getAppConfig, currentConfigIndex=" +  context.operation.currentConfigIndex + ", currentConfigType="+ context.operation.currentConfigType +", currentConfigState="+ context.operation.currentConfigState );
         
@@ -176,11 +181,12 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
                 startLogonInit(context);
         }
         else if( context.operation.currentConfigIndex == null){
+               
             if (context.operation.configSources.length > 0){
                 context.operation.currentConfigIndex = 0;
                 context.operation.currentConfigState = "begin";
             }
-            else{
+            else{ //-- (context.operation.currentConfigIndex == nil && context.operation.configSources.length == 0)
                 startLogonInit(context);
             }
         }
@@ -265,7 +271,7 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
             else if (configType == "mobilePlace"){
                 getConfigFromMobilePlace(onGetConfigData, context);
             }
-            else{
+            else {
                 console.log("unknown config type: " + configType);
             }
                      
@@ -503,6 +509,7 @@ cordova.define("com.sap.mp.cordova.plugins.logon.Logon", function(require, expor
 
         // The success callback used for the call to _oLogonCore.initLogon(...)
         var initSuccess = function(certificateSetToLogonCore){
+               
             utils.log('LogonController: LogonCore successfully initialized.');
 			
             _credentialProviderCertificateAvailable = certificateSetToLogonCore;

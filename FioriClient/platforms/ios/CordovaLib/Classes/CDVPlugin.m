@@ -53,6 +53,7 @@ NSString* const CDVRemoteNotificationError = @"CDVRemoteNotificationError";
         self.webView = theWebView;
     }
     return self;
+    
 }
 
 - (void)pluginInitialize

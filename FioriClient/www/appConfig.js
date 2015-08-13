@@ -13,7 +13,7 @@ cordova.define('fiori_client/appConfig', function(require, exports, module) {
          * target application. Note that this value is distinct from the packageName,
          * which is mainly used to identify your application in app stores.
          */
-        "appID": "com.sap.fiori.client",
+        "appID": "com.mycompany.logon",
         /**
          * fioriURL - The full URL of the target application. If your application does not
          * use SMP, it will navigate directly to this URL once logon is completed. If your app
@@ -31,7 +31,7 @@ cordova.define('fiori_client/appConfig', function(require, exports, module) {
          *
          * "https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html"
          */
-        "fioriURL": "",
+        "fioriURL": "https://sapfiori.ssap.xyz:8200/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html/",
         /**
          * fioriURLIsSMP - Set this to true if your are using SMP.
          * If set to true, the application will perform SMP registration.

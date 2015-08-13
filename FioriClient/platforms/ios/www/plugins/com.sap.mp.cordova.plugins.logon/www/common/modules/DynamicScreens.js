@@ -17,6 +17,4 @@ cordova.define("com.sap.mp.cordova.plugins.logon.LogonDynamicScreens", function(
         getScreen: getScreen
     }
 
-
-
 });

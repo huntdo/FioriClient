@@ -13,7 +13,7 @@ cordova.define('fiori_client/appConfig', function(require, exports, module) {
          * target application. Note that this value is distinct from the packageName,
          * which is mainly used to identify your application in app stores.
          */
-        "appID": "com.sap.fiori.client",
+        "appID": "com.mycompany.logon",
         /**
          * fioriURL - The full URL of the target application. If your application does not
          * use SMP, it will navigate directly to this URL once logon is completed. If your app
@@ -31,19 +31,22 @@ cordova.define('fiori_client/appConfig', function(require, exports, module) {
          *
          * "https://my.smp.server:8081/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html"
          */
-        "fioriURL": "",
+        "fioriURL": "https://54.183.169.52:8083/Admin/",
+               
+        //"fioriURL":"https://www.sapfioritrial.com/sap/hana/uis/clients/ushell-app/shells/fiori/FioriLaunchpad.html?helpset=trial&sap-client=001",
+               
         /**
          * fioriURLIsSMP - Set this to true if your are using SMP.
          * If set to true, the application will perform SMP registration.
          */
-        "fioriURLIsSMP": false,
+        "fioriURLIsSMP": true,
         
         /**
 		 * certificate - Set the client certificate provider
          * for current version, only supports "afaria" as certificate provider. 
          * As afaria seeding data is not supported, so the only use of afaria is for client certificate. 
          */
-         "certificate": "",
+         "certificate": "", //-- com.sap.afaria
 
         /**
          * passcodePolicy - Specify the passcodePolicy of the data vault. Note: if you
@@ -62,7 +65,15 @@ cordova.define('fiori_client/appConfig', function(require, exports, module) {
                "minLength":"8",
                "minUniqueChars":"0",
                "retryLimit":"10"
-          }
+          },
+             
+               
+       /**
+        *  account demo
+        */
+          "username":"1002",
+          "password":"sap123"
+               
     };
     module.exports = appConfig;
 });

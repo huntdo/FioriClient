@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script>
+            applicationContext = null;
+            
+            window.onerror = onError;
+
+            function onError(msg, url, line) {
+                var idx = url.lastIndexOf("/");
+                var file = "unknown";
+                if (idx > -1) {
+                    file = url.substring(idx + 1);
+                }
+                alert("An error occurred in " + file + " (at line # " + line + "): " + msg);
+                return false; //suppressErrorAlert;
+            }
+
+            function logonSuccessCallback(result) {
+                alert("Successfully Registered");
+                applicationContext = result;
+            }
+            
+            function logonUnregisterSuccessCallback(result) {
+                alert("Successfully Unregistered");
+                applicationContext = null;
+                //sap.Logon.unlock(function () {},function (error) {});
+            }
+            
+            function register() {
+                if (applicationContext) {
+                    alert("Already Registered");
+                    return;
+                }
+                var appId = "com.mycompany.logon"; // Change this to app id on server
+                
+                // Optional initial connection context
+                var context = {
+                    "serverHost": "54.183.169.52", //Place your SMP 3.0 server name here
+                    "https": "false",
+                    "serverPort": "8080",
+                    "user": "myUser2", //Since the application com.mycompany.logon uses the No Authentication Challenge provider, any user name and password will work.
+                    "password": "myPassword", //once set can be changed by calling sap.Logon.changePassword()
+                    "communicatorId": "REST",
+                    "passcode": "password",  //note hardcoding passwords and unlock passcodes are strictly for ease of use during development
+                                             //once set can be changed by calling sap.Logon.managePasscode()
+                    "unlockPasscode": "password",
+                    "passcode_CONFIRM":"password"
+                };
+                
+                alert ("Before call sap.Logon.init ");
+
+                sap.Logon.init(logonSuccessCallback, logonErrorCallback, appId, context);
+                //sap.Logon.unlock(logonSuccessCallback, errorCallback);  //No need to call this as init shows the register/unlock screen when called.
+            }
+
+            function logonErrorCallback(error) {   //this method is called if the user cancels the registration.
+                console.log("An error occurred:  " + JSON.stringify(error));
+                if (device.platform == "Android") {  //Not supported on iOS
+                    navigator.app.exitApp();
+                }
+            }
+
+            function unRegister() {
+                if (applicationContext == null) {
+                    alert("Not Registered");
+                    return;
+                }
+                sap.Logon.core.deleteRegistration(logonUnregisterSuccessCallback, unRegisterErrorCallback);
+            }
+
+            function unRegisterErrorCallback(error) {
+                console.log("An error occurred:  " + JSON.stringify(error));
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Logon Sample 2</h1>
+        <button id="register" onclick="register()">Register</button>
+        <button id="unregister" onclick="unRegister()">Unregister</button>
+    </body>
+</html>

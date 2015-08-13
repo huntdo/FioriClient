@@ -2,20 +2,21 @@
     <head>
         <script src="datajs-1.1.2.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="appConfig.js"></script>
         <script>
             applicationContext = null;
             
-           // window.onerror = onError;
+            window.onerror = onError;
             
-            var appId = "com.mycompany.logon"; // Change this to app id on server
+            var appId = appConfig.appId; // Change this to app id on server
             
             // Optional initial connection context
             var context = {
                 "serverHost": "54.183.169.52", //Place your SMP 3.0 server name here
                 "https": "false",
                 "serverPort": "8080",
-                "user": "xxx", //For demo purposes, specify the user name you wish to register with here to save typing on the device
-                "password": "MyPasswxxxord",  //Note, if you wish to use this user name and password to be passed to the backend OData producer, choose Basic as the SSO mechanism
+                "user": "MyUserName", //For demo purposes, specify the user name you wish to register with here to save typing on the device 
+                "password": "MyPassword",  //Note, if you wish to use this user name and password to be passed to the backend OData producer, choose Basic as the SSO mechanism
                                       //The read method is sending the user name and password in an Authorization header with each request
                                       //Alternatively the AuthProxy plugin can respond to 401 challenges automatically when SAPKapselHandleHttpRequests=true 
                                       //once set can be changed by calling sap.Logon.changePassword()
@@ -52,9 +53,6 @@
                 applicationContext = result;
                
                alert("register successful");
-               
-               alert(JSON.stringify(result));
-               console.log(result);
                showScreen("MainDiv");
             }
 
@@ -63,8 +61,6 @@
                 if (device.platform == "Android") {  //Not supported on iOS
                     navigator.app.exitApp();
                 }
-                
-                alert(JSON.stringify(error));
             }
         
             function read() {
@@ -73,11 +69,11 @@
                     return;
                 }
                 clearTable();
-                sUrl = applicationContext.applicationEndpointURL + "/?$format=json";  //JSON format is less verbose than atom/xml
+                sUrl = applicationContext.applicationEndpointURL + "/CarrierCollection?$format=json";  //JSON format is less verbose than atom/xml
                 var oHeaders = {};
                 //this can be provided by the authproxy plugin if intercept all requests is set to true.  It is by default on iOS but not on Android
                 oHeaders['Authorization'] = "Basic " + btoa(applicationContext.registrationContext.user + ":" + applicationContext.registrationContext.password);
-                oHeaders['X-SMP-APPCID'] = applicationContext.applicationConnectionId;  //not needed as this will be sent by the logon plugin
+                //oHeaders['X-SMP-APPCID'] = applicationContext.applicationConnectionId;  //not needed as this will be sent by the logon plugin
                 
                 var request = {
                     headers : oHeaders,

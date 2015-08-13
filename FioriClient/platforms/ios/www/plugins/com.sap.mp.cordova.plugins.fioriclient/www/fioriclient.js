@@ -1257,6 +1257,7 @@ cordova.define("com.sap.mp.cordova.plugins.fioriclient.FioriClient", function(re
     };
 
     var onDeviceReady = function() {
+               
         sap.Logger.info('Cordova container initialized', 'FIORI_CLIENT');
 
         //to check network status
@@ -1328,7 +1329,7 @@ cordova.define("com.sap.mp.cordova.plugins.fioriclient.FioriClient", function(re
 
             //Uncomment and modify the below block to bypass the logon regisration and passcode initialization screen
             //Please refer to Kapsel SDK Getting Started Guide for details - http://scn.sap.com/docs/DOC-49524
-            /*context.operation.logonView.onShowScreen = function(screenId, screenEvents, currentContext) {
+            context.operation.logonView.onShowScreen = function(screenId, screenEvents, currentContext) {
                 if (screenId == "SCR_SSOPIN_SET") {
                     screenEvents.onskip();
                     return true;
@@ -1374,7 +1375,7 @@ cordova.define("com.sap.mp.cordova.plugins.fioriclient.FioriClient", function(re
                 }
                 return false;
             };
-            */
+            
 
             sap.Logon.loadConfiguration(sap.FioriClient, context);
 		});

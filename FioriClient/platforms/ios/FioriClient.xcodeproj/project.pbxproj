@@ -11,6 +11,8 @@
 		0AAEF93D91574A8BA638C9D2 /* Certificate.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1266D063609346F1945127C7 /* Certificate.xcassets */; };
 		0BC1EF7819424DB4ACF6204A /* libRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 124FECA561F5441483B4048F /* libRequest.a */; };
 		0E8FBAE60F1444C081CFAEEA /* libSMPCacheManagerPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673F4101EB4941379BCE0717 /* libSMPCacheManagerPlugin.a */; };
+		14DD87711B71BB2A00756B34 /* FioriNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD87701B71BB2A00756B34 /* FioriNetworking.m */; };
+		14DD87741B71BB7000756B34 /* FioriDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD87731B71BB7000756B34 /* FioriDataStore.m */; };
 		1569E8A67C674643BCCBEB40 /* libSMPCoreLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 830582795B044C97BAA130FA /* libSMPCoreLib.a */; };
 		1B79F1C036DF4D92BF802EA3 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A9FDE11494303AE283FD9 /* libiconv.dylib */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -159,6 +161,12 @@
 		1266D063609346F1945127C7 /* Certificate.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; path = Certificate.xcassets; sourceTree = "<group>"; };
 		135A9FDE11494303AE283FD9 /* libiconv.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		14C9A28CC4AE4A4680CF2550 /* CDVSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSound.m; path = org.apache.cordova.media/CDVSound.m; sourceTree = "<group>"; };
+		14DD876F1B71BB2A00756B34 /* FioriNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriNetworking.h; sourceTree = "<group>"; };
+		14DD87701B71BB2A00756B34 /* FioriNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriNetworking.m; sourceTree = "<group>"; };
+		14DD87721B71BB7000756B34 /* FioriDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriDataStore.h; sourceTree = "<group>"; };
+		14DD87731B71BB7000756B34 /* FioriDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriDataStore.m; sourceTree = "<group>"; };
+		14DD87751B71BB8700756B34 /* FioriLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FioriLog.h; sourceTree = "<group>"; };
+		14DD87761B71BBA800756B34 /* FioriPreProcessorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FioriPreProcessorConstants.h; sourceTree = "<group>"; };
 		165390B484B3416BA41EB06B /* libz.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1699A3D2AED44BFAA6227125 /* MAFLogonManagerNG.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MAFLogonManagerNG.bundle; sourceTree = "<group>"; };
 		17C9DC68DCA442BEA3058FFE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -380,6 +388,19 @@
 			path = FioriClient/Classes;
 			sourceTree = SOURCE_ROOT;
 		};
+		14DD876E1B71BB1100756B34 /* ConnectFiori */ = {
+			isa = PBXGroup;
+			children = (
+				14DD876F1B71BB2A00756B34 /* FioriNetworking.h */,
+				14DD87701B71BB2A00756B34 /* FioriNetworking.m */,
+				14DD87721B71BB7000756B34 /* FioriDataStore.h */,
+				14DD87731B71BB7000756B34 /* FioriDataStore.m */,
+				14DD87751B71BB8700756B34 /* FioriLog.h */,
+				14DD87761B71BBA800756B34 /* FioriPreProcessorConstants.h */,
+			);
+			name = ConnectFiori;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +430,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				14DD876E1B71BB1100756B34 /* ConnectFiori */,
 				32CA4F630368D1EE00C91783 /* FioriClient-Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -636,6 +658,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = TAM3489R37;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FioriClient" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -761,6 +788,8 @@
 				4FBA7C3EAA474AF28FF75EA2 /* CDVJpegHeaderWriter.m in Sources */,
 				2718B2FA3C1D4D4686ED8EB8 /* CDVContacts.m in Sources */,
 				B452D26A6B0C4E0AA6C28A24 /* CDVContact.m in Sources */,
+				14DD87711B71BB2A00756B34 /* FioriNetworking.m in Sources */,
+				14DD87741B71BB7000756B34 /* FioriDataStore.m in Sources */,
 				9E04FCFBA1224C3A958EF8D4 /* CDVLocation.m in Sources */,
 				8A136F65E722482CAC967149 /* CDVStatusBar.m in Sources */,
 				F717BA3EA24D437EB3989F60 /* CDVSplashScreen.m in Sources */,
@@ -786,11 +815,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FIORI_POSTFIX = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FioriClient/FioriClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					FIORI_LAUNCHPAD,
+					DEBUG,
+				);
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FioriClient/FioriClient-Info.plist";
@@ -855,9 +890,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FIORI_POSTFIX = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FioriClient/FioriClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = FIORI_LAUNCHPAD;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "FioriClient/FioriClient-Info.plist";
