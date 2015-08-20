@@ -11,8 +11,10 @@
 		0AAEF93D91574A8BA638C9D2 /* Certificate.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1266D063609346F1945127C7 /* Certificate.xcassets */; };
 		0BC1EF7819424DB4ACF6204A /* libRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 124FECA561F5441483B4048F /* libRequest.a */; };
 		0E8FBAE60F1444C081CFAEEA /* libSMPCacheManagerPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 673F4101EB4941379BCE0717 /* libSMPCacheManagerPlugin.a */; };
-		14DD87711B71BB2A00756B34 /* FioriNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD87701B71BB2A00756B34 /* FioriNetworking.m */; };
-		14DD87741B71BB7000756B34 /* FioriDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD87731B71BB7000756B34 /* FioriDataStore.m */; };
+		141227171B85CA5B00D4FF4A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 141227161B85CA5B00D4FF4A /* MBProgressHUD.m */; };
+		14FB6AFD1B8488AB00542828 /* UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB6AFC1B8488AB00542828 /* UserLogin.m */; };
+		14FB6B041B848BDF00542828 /* FioriDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB6B011B848BDF00542828 /* FioriDataStore.m */; };
+		14FB6B051B848BDF00542828 /* FioriNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 14FB6B031B848BDF00542828 /* FioriNetworking.m */; };
 		1569E8A67C674643BCCBEB40 /* libSMPCoreLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 830582795B044C97BAA130FA /* libSMPCoreLib.a */; };
 		1B79F1C036DF4D92BF802EA3 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 135A9FDE11494303AE283FD9 /* libiconv.dylib */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -160,13 +162,17 @@
 		124FECA561F5441483B4048F /* libRequest.a */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = archive.ar; name = libRequest.a; path = FioriClient/Plugins/com.sap.mp.cordova.plugins.corelibs/libRequest.a; sourceTree = "<group>"; };
 		1266D063609346F1945127C7 /* Certificate.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; path = Certificate.xcassets; sourceTree = "<group>"; };
 		135A9FDE11494303AE283FD9 /* libiconv.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		141227151B85CA5B00D4FF4A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		141227161B85CA5B00D4FF4A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		14C9A28CC4AE4A4680CF2550 /* CDVSound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVSound.m; path = org.apache.cordova.media/CDVSound.m; sourceTree = "<group>"; };
-		14DD876F1B71BB2A00756B34 /* FioriNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriNetworking.h; sourceTree = "<group>"; };
-		14DD87701B71BB2A00756B34 /* FioriNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriNetworking.m; sourceTree = "<group>"; };
-		14DD87721B71BB7000756B34 /* FioriDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriDataStore.h; sourceTree = "<group>"; };
-		14DD87731B71BB7000756B34 /* FioriDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriDataStore.m; sourceTree = "<group>"; };
 		14DD87751B71BB8700756B34 /* FioriLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FioriLog.h; sourceTree = "<group>"; };
 		14DD87761B71BBA800756B34 /* FioriPreProcessorConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FioriPreProcessorConstants.h; sourceTree = "<group>"; };
+		14FB6AFB1B8488AB00542828 /* UserLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserLogin.h; path = ../Plugins/UserLogin.h; sourceTree = "<group>"; };
+		14FB6AFC1B8488AB00542828 /* UserLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserLogin.m; path = ../Plugins/UserLogin.m; sourceTree = "<group>"; };
+		14FB6B001B848BDF00542828 /* FioriDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriDataStore.h; sourceTree = "<group>"; };
+		14FB6B011B848BDF00542828 /* FioriDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriDataStore.m; sourceTree = "<group>"; };
+		14FB6B021B848BDF00542828 /* FioriNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FioriNetworking.h; sourceTree = "<group>"; };
+		14FB6B031B848BDF00542828 /* FioriNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FioriNetworking.m; sourceTree = "<group>"; };
 		165390B484B3416BA41EB06B /* libz.dylib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		1699A3D2AED44BFAA6227125 /* MAFLogonManagerNG.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MAFLogonManagerNG.bundle; sourceTree = "<group>"; };
 		17C9DC68DCA442BEA3058FFE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -383,6 +389,14 @@
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				14FB6AFB1B8488AB00542828 /* UserLogin.h */,
+				14FB6AFC1B8488AB00542828 /* UserLogin.m */,
+				14FB6B001B848BDF00542828 /* FioriDataStore.h */,
+				14FB6B011B848BDF00542828 /* FioriDataStore.m */,
+				14FB6B021B848BDF00542828 /* FioriNetworking.h */,
+				14FB6B031B848BDF00542828 /* FioriNetworking.m */,
+				141227151B85CA5B00D4FF4A /* MBProgressHUD.h */,
+				141227161B85CA5B00D4FF4A /* MBProgressHUD.m */,
 			);
 			name = Classes;
 			path = FioriClient/Classes;
@@ -391,10 +405,6 @@
 		14DD876E1B71BB1100756B34 /* ConnectFiori */ = {
 			isa = PBXGroup;
 			children = (
-				14DD876F1B71BB2A00756B34 /* FioriNetworking.h */,
-				14DD87701B71BB2A00756B34 /* FioriNetworking.m */,
-				14DD87721B71BB7000756B34 /* FioriDataStore.h */,
-				14DD87731B71BB7000756B34 /* FioriDataStore.m */,
 				14DD87751B71BB8700756B34 /* FioriLog.h */,
 				14DD87761B71BBA800756B34 /* FioriPreProcessorConstants.h */,
 			);
@@ -783,17 +793,19 @@
 				B7EB3FFD0F30406C87CA8E34 /* CDVLocalFilesystem.m in Sources */,
 				34961E2D2C1E4AFD8AA52FF3 /* CDVAssetLibraryFilesystem.m in Sources */,
 				72C093812E814165ACF7FEE0 /* CDVCapture.m in Sources */,
+				14FB6B041B848BDF00542828 /* FioriDataStore.m in Sources */,
 				BE88D9121B834E6685438344 /* UIImage+CropScaleOrientation.m in Sources */,
 				436465C1F9154985A7CA12F3 /* CDVCamera.m in Sources */,
 				4FBA7C3EAA474AF28FF75EA2 /* CDVJpegHeaderWriter.m in Sources */,
 				2718B2FA3C1D4D4686ED8EB8 /* CDVContacts.m in Sources */,
+				14FB6AFD1B8488AB00542828 /* UserLogin.m in Sources */,
 				B452D26A6B0C4E0AA6C28A24 /* CDVContact.m in Sources */,
-				14DD87711B71BB2A00756B34 /* FioriNetworking.m in Sources */,
-				14DD87741B71BB7000756B34 /* FioriDataStore.m in Sources */,
+				141227171B85CA5B00D4FF4A /* MBProgressHUD.m in Sources */,
 				9E04FCFBA1224C3A958EF8D4 /* CDVLocation.m in Sources */,
 				8A136F65E722482CAC967149 /* CDVStatusBar.m in Sources */,
 				F717BA3EA24D437EB3989F60 /* CDVSplashScreen.m in Sources */,
 				92CC1C145DE545D29BA12137 /* CDVConnection.m in Sources */,
+				14FB6B051B848BDF00542828 /* FioriNetworking.m in Sources */,
 				6BFEB2D3C1534C1E9C4F4701 /* CDVReachability.m in Sources */,
 				57756DAC7666484594B841C0 /* CDVSound.m in Sources */,
 			);
